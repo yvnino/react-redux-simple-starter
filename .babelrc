@@ -1,0 +1,33 @@
+{
+  "plugins": 
+  [
+      "react-hot-loader/babel"
+  ],
+
+  "presets": 
+  [
+      "es2015",
+      "stage-0",
+      "stage-3",
+      "react"
+  ],
+
+  "env": 
+  {
+      "production": 
+      {
+          "presets": 
+          [
+              "react-optimize"
+          ]
+      },
+
+      "development": 
+      {
+          "plugins": 
+          [
+              "transform-react-jsx-source"
+          ]
+      }
+  }
+}

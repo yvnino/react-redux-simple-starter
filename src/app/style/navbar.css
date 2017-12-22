@@ -1,0 +1,22 @@
+nav{
+    display: flex;
+    justify-content: space-start;
+    background-color: rgb(46, 39, 116);
+}
+.nav-bar nav a{
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block;
+}
+.nav-bar nav a.active{
+    background-color: rgb(63, 63, 63);
+}
+
+.nav-bar nav a:hover{
+    background-color: rgb(63, 63, 63);
+}
+
+.topBarBtn{
+    cursor: pointer;
+}
