@@ -6,7 +6,6 @@ Easy starter kit of react redux project
 Follow the next steps to run the app locally:
 npm run start:dev - Development env
 npm run start:prod - Development prod
- 
 
 ## License
 
