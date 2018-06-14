@@ -39,12 +39,12 @@ module.exports = {
       		{
         		test : /\.jsx?/,
         		loaders :['react-hot-loader/webpack', 'babel-loader'],
-            exclude: '/node_modules/'
+            exclude: /node_modules/
           },
           {
             test: /\.less$/,
             loader: 'style-loader!css-loader!less-loader',
-            exclude: '/node_modules/'
+            exclude: /node_modules/
           },
           {
             test: /\.scss$/,
@@ -54,7 +54,7 @@ module.exports = {
           {
             test: /\.(ico|jpg|jpeg|png|gif)$/i,
             loaders: ['file-loader'],
-            exclude: '/node_modules/'
+            exclude: /node_modules/
           },
           {
             test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
