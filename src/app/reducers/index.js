@@ -1,11 +1,8 @@
 import { combineReducers } from 'redux';
-import toasterReducer from './notifications.js';
-import styleReducer from './style.js';
+import baseReducer from './base';
 
+const rootReducer = combineReducers({
+  baseReducer
+});
 
-const mainReducer = combineReducers({
-    toasterReducer,
-    styleReducer
-})
-
-export default mainReducer
+export default rootReducer;

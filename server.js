@@ -29,6 +29,7 @@ new WebpackDevServer(compailer, {
     hot: true,
     headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true' },
     historyApiFallback: true,
+    progress: true,
     stats: {
         colors: true,
         chunks: false,
