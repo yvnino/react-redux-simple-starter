@@ -3,7 +3,6 @@
   [
       "react-hot-loader/babel"
   ],
-
   "presets": 
   [
       "es2015",
@@ -11,7 +10,6 @@
       "stage-3",
       "react"
   ],
-
   "env": 
   {
       "production": 
@@ -28,6 +26,12 @@
           [
               "transform-react-jsx-source"
           ]
+      },
+      
+      "jest" :true,
+      "test": {
+        "presets": [["env"], "react"],
+        "plugins": ["transform-class-properties", "transform-es2015-arrow-functions", "transform-es2015-modules-commonjs"]
       }
   }
 }

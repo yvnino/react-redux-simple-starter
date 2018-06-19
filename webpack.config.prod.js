@@ -6,7 +6,7 @@ const _ = require('lodash');
 
 module.exports = {
     entry: {
-        js: './src/app/index.jsx',
+        js: './src/app/index.js',
         vendor: _.keys(pkg.dependencies)
     },
     output: {
