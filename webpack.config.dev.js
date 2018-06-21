@@ -11,6 +11,7 @@ const config =  {
     extensions: ['.js', '.jsx'],
     symlinks: false
   },
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     `webpack-dev-server/client?http://${process.env.npm_package_config_host}:${process.env.npm_package_config_port}`,
     'webpack/hot/only-dev-server',

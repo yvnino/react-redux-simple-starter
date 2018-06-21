@@ -16,10 +16,20 @@ const setTextAsyncFail = (data) => ({
   payload: data
 });
 
+// ---------TOASTER---------
+export const toasterSuccess = (data) => ({
+  type: 'SUCCESS_MESSAGE', data
+});
+
+export const toasterFail = (e) => ({
+  type: 'FAIL_MESSAGE', e
+});
+
 export const setTextAsync = () => (dispatch) => {
   axios.get('https://baconipsum.com/api/?type=meat-and-filler')
     .then((response) => {
       dispatch(setTextAsyncSuccess(response.data[0]));
+      dispatch(toasterSuccess({ msg: 'TextAsync success' }));
     })
     .catch((error) => {
       dispatch(setTextAsyncFail(error.message));

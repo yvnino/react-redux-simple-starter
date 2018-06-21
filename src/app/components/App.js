@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
+// import { Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as BaseActions from '../actions/BaseActions';
@@ -25,14 +25,14 @@ export class App extends React.Component {
       <div>
         <div style={ { color: '#fff' } } >Loaded!</div>
         <div>
-          <Button variant="contained" color="secondary" id="SetTextSyncButton" onClick={ this.handleSyncClick }>
+          <button variant="contained" color="secondary" id="SetTextSyncButton" onClick={ this.handleSyncClick }>
             SetTextSync
-          </Button>
+          </button>
         </div>
         <div>
-          <Button variant="contained" color="primary" id="SetTextAsyncButton" onClick={ this.handleAsyncClick }>
+          <button variant="contained" color="primary" id="SetTextAsyncButton" onClick={ this.handleAsyncClick }>
             SetTextAsync
-          </Button>
+          </button>
         </div>
         <div style={ { color: '#fff' } }>
           {this.props.text}
