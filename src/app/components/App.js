@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as BaseActions from '../actions/BaseActions';
@@ -23,7 +22,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <div style={ { color: '#fff' } } >Loaded!</div>
+        <div>Loaded!</div>
         <div>
           <button variant="contained" color="secondary" id="SetTextSyncButton" onClick={ this.handleSyncClick }>
             SetTextSync
@@ -34,7 +33,7 @@ export class App extends React.Component {
             SetTextAsync
           </button>
         </div>
-        <div style={ { color: '#fff' } }>
+        <div>
           {this.props.text}
         </div>
       </div>
@@ -43,8 +42,10 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  const { text } = state.baseReducer;
+
   return {
-    text: state.baseReducer.text
+    text
   };
 };
 

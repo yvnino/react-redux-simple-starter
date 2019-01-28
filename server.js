@@ -1,4 +1,4 @@
-/*eslint no-console: 0*/
+/*eslint-disable*/
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
@@ -13,32 +13,30 @@ const isProduction = appEnv == 'prod';
 
 var compailer, config;
 
-if (isProduction)
-{
-    compailer = webpack(prodConfig);
-    config = prodConfig;
-} 
-else
-{
-    compailer = webpack(devConfig);
-    config = devConfig;
+if (isProduction) {
+  compailer = webpack(prodConfig);
+  config = prodConfig;
+}
+else {
+  compailer = webpack(devConfig);
+  config = devConfig;
 }
 
 new WebpackDevServer(compailer, {
-    publicPath: config.output.publicPath,
-    hot: true,
-    headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true' },
-    historyApiFallback: true,
-    progress: true,
-    stats: {
-        colors: true,
-        chunks: false,
-        'errors-only': true
-    }
+  publicPath: config.output.publicPath,
+  hot: true,
+  headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true' },
+  historyApiFallback: true,
+  progress: true,
+  stats: {
+    colors: true,
+    chunks: false,
+    'errors-only': true
+  }
 }).listen(port, host, function (err) {
-    if (err) {
-        console.log(err);
-    }
+  if (err) {
+    console.log(err);
+  }
 
-    console.log(`Listening at http://${host}:${port}/`);
+  console.log(`Listening at http://${host}:${port}/`);
 });

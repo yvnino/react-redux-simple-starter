@@ -1,22 +1,18 @@
 import { set } from 'lodash/fp';
+import { handleActions } from 'redux-actions';
 import AT from 'constants/actionTypes';
 
 export const initialState = {
   text: null
 };
 
-const baseReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case AT.SET_TEXT_ASYNC_SUCCESS:
-    case AT.SET_TEXT_SYNC: {
-      return set('text', action.payload, state);
-    }
-    case AT.SET_TEXT_ASYNC_FAIL: {
-      return set('text', action.payload, state);
-    }
-    default:
-      return state;
+const baseReducer = handleActions({
+  [AT.SET_TEXT_SYNC]: (state, action) => {
+    return set('text', action.payload, state);
+  },
+  [AT.SET_TEXT_ASYNC.SUCCESS]: (state, action) => {
+    return set('text', action.payload.data[0], state);
   }
-};
+}, initialState);
 
 export default baseReducer;

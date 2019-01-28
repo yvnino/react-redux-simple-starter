@@ -1,11 +1,15 @@
 
-import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import { apiMiddleware } from 'middleware/api';
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from '../reducers/index';
+import rootReducer from 'reducers/index';
 
-const enhancer = compose(applyMiddleware(thunk, createLogger({ collapsed: true })));
-const store = createStore(rootReducer, enhancer);
+const enhancer = compose(applyMiddleware(
+  apiMiddleware,
+  createLogger({ collapsed: true })
+));
+
+export const store = createStore(rootReducer, enhancer);
 
 export function configureStore() {
   if (module.hot) {
